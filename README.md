@@ -1,2 +1,2 @@
-# pymysql-test
-use pymysql 
+# use python flask crud json
+## xiang 17.03.11
