@@ -3,9 +3,9 @@ from flask import Flask, render_template, request, jsonify
 import json
 import ntpath
 
-__author__ = 'Rajshekhar Horatti'
 app = Flask(__name__, static_url_path='/static')
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+
 
 def AddAsset(data):
     try:
@@ -25,7 +25,6 @@ def AddAsset(data):
 @app.route("/")
 def index():
     return render_template("index.html")
-
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -66,6 +65,7 @@ def AssetDEL():
                 with open('./Assets/data.json', 'w') as f:
                     json.dump(item, f)
         return jsonify(delassets)
+
 
 @app.route("/assets/", methods=['GET'])
 def AssetGET():
